@@ -135,4 +135,4 @@ cd ~/EAC/bin
 ./service-install.sh
 ```
 
-Once you've followed these instructions, `project-tanya` is ready for use!
+Once you've followed these instructions, `EAC` is ready for use!
