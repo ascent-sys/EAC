@@ -1,6 +1,4 @@
-# Tanya
-
-"Victory. Such a tempting thing. Naturally, everyone wants to savor a taste." - Tanya von Degurechaff
+# EAC
 
 # Installation
 
@@ -18,49 +16,7 @@ sudo passwd
 
 See [this page for more information](https://www.cyberciti.biz/faq/how-can-i-log-in-as-root/) on the root user.
 
-## (2) Enable Process Isolation
-
-We'll ensure that non-root users are unable to see the `project-tanya` service.
-
-1. Switch to the `root` user:
-
-```
-su
-```
-
-2. Install dependencies:
-
-```
-apt install -y vim
-```
-
-3. Open `/etc/fstab` with *vim*:
-
-```
-vim /etc/fstab
-```
-
-4. Add the following line:
-
-```
-proc /proc proc defaults,nosuid,nodev,noexec,relatime,hidepid=1 0 0
-```
-
-5. Reboot your system:
-
-```
-reboot
-```
-
-6. Check that your non-root user cannot see root processes:
-
-```
-ps aux
-```
-
-See [this page for more information](https://www.kernel.org/doc/Documentation/filesystems/proc.txt) on process isolation.
-
-## (3) Disable Process Tracing
+## (2) Disable Process Tracing
 
 We'll ensure that non-root users cannot use `ptrace` capabilities.
 
@@ -98,7 +54,7 @@ See [this page for more information](https://www.kernel.org/doc/Documentation/se
 
 ## (4) Install .NET
 
-We'll ensure that `project-tanya` can be compiled with *.NET*.
+We'll ensure that `EAC` can be compiled with *.NET*.
 
 1. Switch to the `root` user:
 
@@ -119,7 +75,7 @@ apt update && apt install -y dotnet-sdk-6.0
 
 ## (5) Build Service
 
-We'll build `project-tanya`, so we can register it as a service:
+We'll build `EAC`, so we can register it as a service:
 
 1. Switch to `root` user:
 
@@ -142,13 +98,13 @@ apt install -y git
 4. Clone this repository:
 
 ```
-git clone https://github.com/XRadius/project-tanya
+git clone https://github.com/ascent-sys/EAC
 ```
 
-5. Open the `project-tanya` directory:
+5. Open the `EAC` directory:
 
 ```
-cd ~/project-tanya
+cd EAC
 ```
 
 6. Enable execution of the *build script*:
@@ -165,12 +121,12 @@ chmod +x service-build.sh
 
 ## (6) Install Service
 
-We'll install `project-tanya` as a service:
+We'll install `EAC` as a service:
 
 1. Open the `bin` directory:
 
 ```
-cd ~/project-tanya/bin
+cd ~/EAC/bin
 ```
 
 2. Run the *installation script* and follow the instructions:
